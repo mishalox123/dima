@@ -1,0 +1,270 @@
+/*Контейнер*/
+
+body{
+    margin: 0;
+    background: linear-gradient(90deg, #2f4f4f, #808080);
+}
+
+.order-pic{
+    justify-content: center;
+    height: auto;
+    width: auto;
+    display: flex;
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-wrap: wrap;
+    padding-top: 150px;
+}
+
+.order-container-main-pic{
+    display: flex;
+    width: 1350px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.order-container{
+    justify-content: center;
+    height: auto;
+    width: auto;
+    display: flex;
+    padding: 50px 25px 50px 25px;
+    flex-wrap: wrap;
+    background: transparent;
+}
+
+.order-container-main{
+    display: flex;
+    width: 1350px;
+    height: auto;
+    justify-content: space-between;
+    animation: fade-in 1s;
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.order-container-left{
+    width: 69%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    transition: all .5s ease;
+}
+
+.order-user-inf{
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    padding: 25px;
+    height: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.text-container{
+    display: flex;
+    flex-flow: column;
+    width: 32%;
+    transition: all .5s ease;
+    color: white;
+}
+
+.form-adress{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.order-form-end{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.inp-loc{
+    display: flex;
+    flex-flow: column;
+    width: 49.5%;
+    margin-bottom: 5px;
+    transition: all .5s ease;
+}
+
+.btn-order{
+    margin-top: -5px;
+    position: relative;
+    width: 30%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: bolder;
+    margin-bottom: 0;
+    transition: .5s;
+}
+
+
+.invisible{
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.order-container-right{
+    color: white;
+    width: 29%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    transition: all .5s ease;
+}
+
+.order-product{
+    color: black;
+    background: #d3cdcd;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    padding: 25px;
+    height: auto;
+    border-radius: 25px;
+    overflow: hidden;
+    row-gap: 10px;
+    transition: all .5s ease;
+}
+
+.product-ship-total{
+    padding-top: 15px;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 0;
+    transition: all .5s ease;
+}
+
+.product-ship{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    transition: all .5s ease;
+}
+
+.product-ship-1{
+    display: flex;
+    width: 60%;
+    flex-flow: column;
+    transition: all .5s ease;
+}
+
+.product-ship-2{
+    text-align: right;
+    display: flex;
+    width: 39%;
+    flex-flow: column;
+    transition: all .5s ease;
+}
+
+/*СкроллБар*/
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.50);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f9f9fd;
+}
+
+
+/*Мобильная версия*/
+
+@media (max-width: 1100px) {
+
+    .order-user-inf{
+        flex-flow: column;
+    }
+
+    .text-container{
+        width: 100%;
+    }
+
+    .product-ship,
+    .product-ship-total{
+        flex-direction: column;
+    }
+
+    .product-ship-1{
+        width: 100%;
+    }
+
+    .product-ship-2{
+        width: 100%;
+        justify-content: start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .inp-loc{
+        width: 100%;
+    }
+
+    .invisible{
+        display: none;
+    }
+
+    .order-form-end{
+        justify-content: normal;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .btn-order{
+        width: 100%;
+    }
+
+    .product-ship,
+    .product-ship-total{
+        flex-flow: nowrap;
+    }
+
+    .product-ship-1{
+        width: 60%;
+    }
+
+    .product-ship-2{
+        width: 39%;
+        justify-content: end;
+    }
+
+    .order-container-main{
+        justify-content: normal;
+        flex-flow: column;
+    }
+
+   .order-container-left{
+       width: 100%;
+   }
+
+    .order-container-right{
+        margin-top: 25px;
+        width: 100%;
+    }
+}
