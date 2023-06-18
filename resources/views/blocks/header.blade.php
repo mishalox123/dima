@@ -107,6 +107,14 @@
     </div>
     <div id="chatbot">
         <div id="conversation">
+            <div class="chatbot-message user-message">
+                <a class="chatbot-text-help" onclick="help_message('test')">
+                    test
+                </a>
+                <a class="chatbot-text-help" onclick="help_message('test2')">
+                    test2
+                </a>
+            </div>
             <div class="chatbot-message">
                 <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
             </div>

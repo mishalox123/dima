@@ -8,7 +8,7 @@ const inputField = document.getElementById('input-field');
 inputForm.addEventListener('submit', function(event) {
     // Prevent form submission
     event.preventDefault();
-
+    addHelpMessage();
     // Get user input
     const input = inputField.value;
 
@@ -21,9 +21,9 @@ inputForm.addEventListener('submit', function(event) {
     message.classList.add('chatbot-message', 'user-message');
     message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${input}</p>`;
     conversation.appendChild(message);
-
+    console.log(input);
     // Generate chatbot response
-    const response = generateResponse(input);
+    const response = generateMessage(input);
 
     // Add chatbot response to conversation
     message = document.createElement('div');
@@ -33,24 +33,32 @@ inputForm.addEventListener('submit', function(event) {
     message.scrollIntoView({behavior: "smooth"});
 });
 
-// Generate chatbot response function
-function generateResponse(input) {
-    // Add chatbot logic here
-    const responses = [
-        "Hello, how can I help you today? 😊",
-        "I'm sorry, I didn't understand your question. Could you please rephrase it? 😕",
-        "I'm here to assist you with any questions or concerns you may have. 📩",
-        "I'm sorry, I'm not able to browse the internet or access external information. Is there anything else I can help with? 💻",
-        "What would you like to know? 🤔",
-        "I'm sorry, I'm not programmed to handle offensive or inappropriate language. Please refrain from using such language in our conversation. 🚫",
-        "I'm here to assist you with any questions or problems you may have. How can I help you today? 🚀",
-        "Is there anything specific you'd like to talk about? 💬",
-        "I'm happy to help with any questions or concerns you may have. Just let me know how I can assist you. 😊",
-        "I'm here to assist you with any questions or problems you may have. What can I help you with today? 🤗",
-        "Is there anything specific you'd like to ask or talk about? I'm here to help with any questions or concerns you may have. 💬",
-        "I'm here to assist you with any questions or problems you may have. How can I help you today? 💡",
-    ];
+//сообщения
+function generateMessage(input) {
+    const message = new Map([
+        ['test' , 'testtest'],
+        ['test2' , 'Нееа вневшаша а агнан нпнн аннаеа паан нпннаеашеаеангпе6кнег66еп 6п6е ']
 
-    // Return a random response
-    return responses[Math.floor(Math.random() * responses.length)];
+    ]);
+
+    return message.get(input);
 }
+
+function help_message(text){
+    inputField.value = text;
+}
+//подсказки
+function addHelpMessage(){
+    const help_message = ['test','test2'];
+    help_message.forEach((item) => {
+        message = document.createElement('div');
+        message.classList.add('chatbot-message','user-message');
+        message.innerHTML = ` <a class="chatbot-text-help" onclick="help_message(`+`'${item}'`+`)"> ` +
+            `${item}
+            </a>`
+
+        conversation.appendChild(message);
+        message.scrollIntoView({behavior: "smooth"});
+    });
+}
+
